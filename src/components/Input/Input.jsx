@@ -1,4 +1,18 @@
-export default function convertTemps() {
-  return <input id="°C" type="number" value="0">
-         <input id="°F" type="number" value="32"
+import PropTypes from "prop-types";
+
+export default function TempInput({ label }) {
+  return (
+    <div>
+      <label htmlFor={label.toLowerCase}>{label}</label>
+      <input
+        type="number"
+        id={label.toLowerCase}
+        className="w-36 rounded border"
+      />
+    </div>
+  );
 }
+
+TempInput.propTypes = {
+  label: PropTypes.string.isRequired,
+};
