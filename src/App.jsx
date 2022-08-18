@@ -1,9 +1,16 @@
 import "./App.css";
 import TempInput from "./components/Input/Input";
+import tryConvert from "./components/lib/tryConvert";
 
 function App() {
   const handleChange = (event) => {
     console.log(event.target.value);
+
+    if (event.target.id === "celsius") {
+      console.log(tryConvert(event.target.vale, "toFahrenheit"));
+    } else {
+      console.log(tryConvert(event.target.value, "toCelsius"));
+    }
   };
 
   return (
